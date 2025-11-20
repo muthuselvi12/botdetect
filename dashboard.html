@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <meta http-equiv="refresh" content="10"> -->
+  <title>Human Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>🎉 Welcome, Human!</h2>
+    <p>You have successfully logged in without a CAPTCHA.</p>
+    <p>This is your secure dashboard.</p>
+    <a href="https://your-link.com" target="_blank">Go to Secure App</a>
+    <form method="POST" action="/clear-sessions" onsubmit="return confirm('Are you sure you want to delete all recorded data?');">
+  <button style="margin-top:20px; padding:10px; background:#dc3545; color:white; border:none; border-radius:5px; cursor:pointer;">
+    🧹 Clear Recorded Data
+  </button>
+</form>
+
+  </div>
+
+
+
+</body>
+
+</html>
