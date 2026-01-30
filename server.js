@@ -15,10 +15,14 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/botdetect", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect("mongodb://localhost:27017/botdetect", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 function isLikelyHuman(events) {
   const totalEvents = events.length;
@@ -199,3 +203,4 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
